@@ -210,7 +210,7 @@ app.get(
 );
 
 app.get(
-  process.env.SERVER_URL+"/auth/google/callback",
+  "/auth/google/callback",
   passport.authenticate("google", {
     failureRedirect: process.env.CLIENT_URL+"/login",
   }),
