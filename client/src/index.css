@@ -1,0 +1,8 @@
+.fileList:hover {
+    background-color:rgb(240, 239, 239);
+}
+
+.buttonStyle {
+    padding: 10px;
+    font-size: 1.2rem;
+}
