@@ -47,7 +47,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL: process.env.SERVER_URL+"/auth/google/callback",
       scope: ["profile", "email", "https://www.googleapis.com/auth/drive.file"],
     },
     (accessToken, refreshToken, profile, done) => {
@@ -210,7 +210,7 @@ app.get(
 );
 
 app.get(
-  "/auth/google/callback",
+  process.env.SERVER_URL+"/auth/google/callback",
   passport.authenticate("google", {
     failureRedirect: process.env.CLIENT_URL+"/login",
   }),
